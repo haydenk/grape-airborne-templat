@@ -13,4 +13,8 @@ use Rack::Cors do
              max_age: 600
   end
 end
+use Rack::TryStatic,
+    :root => File.expand_path('../public', __FILE__),
+    :urls => %w[/], :try => ['.html', 'index.html', '/index.html']
+
 run Rack::Cascade.new [MySinatraApp::App]

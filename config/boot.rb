@@ -32,5 +32,6 @@ module MySinatraApp
     helpers Sinatra::ApplicationHelpers
 
     mount MySinatraApp::Lounges => '/'
+    add_swagger_documentation
   end
 end
